@@ -17,6 +17,15 @@ To run the application locally, you need to have Node.js and npm installed on yo
  ## Depandancies
   * React-JavaScript library for building user interfaces
 
+## To run the application
+ * First start the backend application
+
+   bundle exec rake server
+
+ * Then the frontend application
+ 
+   npm start  
+
  ## Author
  Vivian Njoroge
 

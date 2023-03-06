@@ -29,6 +29,9 @@ To run the application locally, you need to have Node.js and npm installed on yo
  
    npm start  
 
+## Live link for the application
+
+https://proj-man-app.vercel.app/
  ## Author
  Vivian Njoroge
 

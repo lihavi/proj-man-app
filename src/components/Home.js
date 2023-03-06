@@ -10,8 +10,8 @@ function Home() {
         <h1>Welcome to Project Management App!</h1>
         <p>  Keep track of your projects and collaborate with your team.</p>
         <Link to="/loginform" className="btn btn-primary">Login</Link>
-
           <Link to="/signupform" className="btn btn-primary">Sign up</Link>
+          
       </div>
 
       <div className="home-features">

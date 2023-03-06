@@ -4,7 +4,7 @@ function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9292/projects')
+    fetch('http://127.0.0.1:9292/projects')
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error(error));
@@ -12,7 +12,7 @@ function Projects() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:9292/projects/${id}`, {
+      await fetch(`http://127.0.0.1:9292/projects/${id}`, {
         method: 'DELETE',
       });
       setProjects((prevProjects) => prevProjects.filter((project) => project.id !== id));

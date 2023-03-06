@@ -9,7 +9,7 @@ function AddProjectForm({ onAddProject }) {
     event.preventDefault();
     const newProject = { name, title, description };
 // it adds a project but the project doesn't persist.
-    fetch('http://localhost:9292/projects', {
+    fetch('http://127.0.0.1:9292/projects', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

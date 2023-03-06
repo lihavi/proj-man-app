@@ -6,7 +6,7 @@ function StatusUpdateForm({ projectId, onAddStatusUpdate }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    fetch(`http://localhost:9292/projects/${projectId}/status-updates`, {
+    fetch(`http://127.0.0.1:9292/projects/${projectId}/status-updates`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

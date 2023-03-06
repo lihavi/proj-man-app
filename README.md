@@ -1,6 +1,9 @@
 ##  Project Management App
 This applications allows you to make request to a Ruby backend server and get response.
 
+Below is a sneek peek of how the home page looks like
+<img src="images/Screenshot from 2023-03-06 23-53-09.png" alt="Screenshot taken on 2023-03-09 9">
+
 ## Installation Usage
 To run the application locally, you need to have Node.js and npm installed on your machine. 
 

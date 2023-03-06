@@ -1,25 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addMember } from '../actions/projectActions';
+import React, { useState } from 'react';
 
-function MemberForm({ projectId }) {
+function MemberForm({ projectId, onAddMember }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [users, setUsers] = useState([]);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    // Fetch users from the backend API
-    fetch('http://localhost:9292/users')
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.error(error));
-  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addMember(projectId, { name, email }));
+    onAddMember({ projectId, name, email });
     setName('');
     setEmail('');
   };
@@ -29,14 +16,7 @@ function MemberForm({ projectId }) {
       <h3>Add a Member</h3>
       <label>
         Name:
-        <select value={name} onChange={(event) => setName(event.target.value)}>
-          <option value="">Select a user</option>
-          {users.map((user) => (
-            <option key={user.id} value={user.name}>
-              {user.name}
-            </option>
-          ))}
-        </select>
+        <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
       </label>
       <label>
         Email:

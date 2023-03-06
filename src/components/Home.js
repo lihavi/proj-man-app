@@ -15,20 +15,24 @@ function Home() {
       </div>
       <div className="home-features">
         <div className="feature">
-       
           <h2>Task Lists</h2>
           <p> Create and manage task lists to stay on top of your work.</p>
         </div>
         <div className="feature">
-         
           <h2>Deadline Reminders</h2>
           <p> Set reminders for deadlines and never miss a due date again.</p>
         </div>
-    
+        <div className="home-links">
+          <Link to="/loginform" className="btn btn-primary">Login</Link>
+          <Link to="/signupform" className="btn btn-primary">Sign up</Link>
+          <Link to="/addprojectform" className="btn btn-primary">Add a Project</Link>
+          <Link to="/memberform" className="btn btn-primary">Add a Member</Link>
+          <Link to="/statusupdateform" className="btn btn-primary">Add a Status Update</Link>
+        </div>
       </div>
     </div>
   );
 }
 
-
 export default Home;
+

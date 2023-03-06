@@ -18,8 +18,8 @@ function App() {
         <Route path="/signupform" element={<SignupForm />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/addprojectform" element={<AddProjectForm />} />
-        <Route path="/memberform" element={< MemberForm/>}/>
-        <Route path="/statusupdateform" element={< StatusUpdateForm/>}/>
+        <Route path="/memberform" element={< MemberForm />}/>
+        <Route path="/statusupdateform" element={< StatusUpdateForm />}/>
       </Routes>
     </Router>
   );

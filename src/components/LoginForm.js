@@ -1,52 +1,42 @@
-import React, {useState} from "react";
+import { useState } from 'react';
 
- 
- function LoginForm() {
+function LoginForm({ onLogin }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const [formData, setFormData] = useState({
-      email: '',
-      password: ''
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
     });
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      fetch('https://your-user-api.com/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-       
-      })
-      .catch(error => console.error(error));
-    };
-  
-    const handleChange = (event) => {
-      setFormData({
-        ...formData,
-        [event.target.name]: event.target.value
-      });
-    };
-  
-    return (
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} />
-          </label>
-          <label>
-            Password:
-            <input type="password" name="password" value={formData.password} onChange={handleChange} />
-          </label>
-          <button type="submit">Login</button>
-        </form>
-      </div>
-    );
-  }
+
+    if (response.ok) {
+      const data = await response.json();
+      onLogin(data.session_token);
+    } else {
+      const error = await response.json();
+      console.error(error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Email:
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </label>
+      <label>
+        Password:
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </label>
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
 export default LoginForm;

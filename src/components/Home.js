@@ -12,7 +12,11 @@ function Home() {
         <Link to="/projects" className="btn btn-primary">
           See Available Projects
         </Link>
+        <Link to="/loginform" className="btn btn-primary">Login</Link>
+
+          <Link to="/signupform" className="btn btn-primary">Sign up</Link>
       </div>
+
       <div className="home-features">
         <div className="feature">
           <h2>Task Lists</h2>
@@ -25,11 +29,9 @@ function Home() {
 
         <div class="buttons">
         <div className="home-links">
-          <Link to="/loginform" className="btn btn-primary">Login</Link>
-          <Link to="/signupform" className="btn btn-primary">Sign up</Link>
           <Link to="/addprojectform" className="btn btn-primary"> Projects</Link>
-          <Link to="/memberform" className="btn btn-primary"> Members</Link>
-          <Link to="/statusupdateform" className="btn btn-primary"> Status Update</Link>
+          <Link to="/memberform" className="btn btn-primary">Add Members</Link>
+          <Link to="/statusupdateform" className="btn btn-primary"> Add Status Update</Link>
         </div>
         </div>
       </div>
